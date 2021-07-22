@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+<label for="chuoi">Nhập chuỗi cần kiểm tra : </label>
+<input type="text" id="chuoi">
+<button onclick="isPalindrome()">check</button>
+<p id="ketqua"></p>
+<script>
+    function isPalindrome() {
+        let a = document.getElementById("chuoi").value;
+        if (a.trim() == ""){
+            return alert("Bạn chưa nhập đúng định dạng vui lòng nhập lại !!");
+        }
+        let check = true;
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] != a[a.length-1-i]){
+                check = false;
+                break;
+            }
+        }
+        if (check){
+            document.getElementById("ketqua").innerText = "Đây là một chuỗi palindrome";
+        }else {
+            document.getElementById("ketqua").innerText = "Đây là không phải một chuỗi palindrome";
+        }
+    }
+</script>
+</body>
+</html>
